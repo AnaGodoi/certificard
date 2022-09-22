@@ -22,6 +22,7 @@ body {
 
 .perfil {
   display: flex;
+  align-items: center;
 }
 
 .perfil-foto {
@@ -32,28 +33,52 @@ body {
 
 .titulo {
   margin-left: 16px;
+  color: #393939;
 }
 
 .titulo h1 {
   font-weight: 700;
   font-size: 36px;
+  margin-bottom: 4px;
 }
 
-.titulo h3,
-p {
+.titulo h3 {
   font-weight: 400;
   font-size: 24px;
+  margin: 12px auto 15px;
+}
+.titulo p {
+  font-size: 20px;
+  margin: 0 auto 16px;
+  color: #808080;
+}
+
+.icones {
+  display: flex;
+  font-size: 32px;
+  gap: 16px;
+}
+
+.icones a {
+  color: #808080;
+  transition: 300ms linear;
+}
+
+.icones a:hover {
+  color: #daa520;
+  transform: translateY(-6px);
 }
 
 .tema button {
   margin-left: 16px;
   align-self: flex-end;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 700;
+  color: #808080;
   padding: 8px 16px;
   background: #ecf4ff;
   border-radius: 100px;
-  border: 2px solid #673147;
+  border: 2px solid #808080;
 }
 
 .projetos {
@@ -73,40 +98,86 @@ p {
 }
 
 .projetos-item {
+  cursor: pointer;
   list-style: none;
   font-weight: 400;
   font-size: 24px;
   line-height: 48px;
+  margin-top: 0px;
+}
+
+.projetos-item .codepen-container.open {
+  max-height: 326px;
+  margin: 16px 0;
+  opacity: 1;
+}
+
+.projetos-item .codepen-container {
+  transition: all 0.5s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .projetos-item p {
+  user-select: none;
   color: #1c1c1c;
   text-decoration: none;
+  margin: 0;
+  display: inline-block;
+  transition: 300ms linear;
 }
 
-.dark{
+.projetos-item p:hover{
+  color: #B8860B;
+  transform: translateY(-3px);
+  font-weight: 500;
+  
+}
+
+
+.dark {
   background: linear-gradient(236.85deg, #bc8f8f 27.26%, #301934 96.03%);
- 
+}
+
+.dark .titulo {
+  color: #f1f1f1;
+}
+
+.dark .titulo p {
+  color: #a9a9a9;
+}
+
+.dark .icones a {
+  color: #c0c0c0;
+}
+
+.dark .icones a:hover {
+  color: #da70d6;
 }
 
 .dark .container {
   background: #333;
-  color: #F6F6F6; 
+  color: #f6f6f6;
 }
 
 .dark main p {
   color: #1c1c1c;
 }
 
-.dark .projetos{
+.dark .projetos {
   color: #1c1c1c;
-  background: linear-gradient(230.65deg, #AA98A9 27.49%, #d8bfd8 83.19%);
- /*
+  background: linear-gradient(230.65deg, #aa98a9 27.49%, #d8bfd8 83.19%);
+  /*
   background: linear-gradient(236.85deg, #301934 27.26%, #bc8f8f 96.03%);*/
 }
 
-.dark .tema button{
+.dark .tema button {
   background: #333;
   color: #f6f6f6;
-  border: 2px solid #D4C6E4;
+  border: 2px solid #d4c6e4;
+}
+
+.dark .projetos-item p:hover{
+  color: #8B008B;
 }
